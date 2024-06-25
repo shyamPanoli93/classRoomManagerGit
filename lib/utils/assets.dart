@@ -5,3 +5,5 @@ const String icon_pen = 'assets/images/icon_pen.png';
 const String icon_grid = 'assets/images/icon_grid.png';
 const String demo_profile = 'assets/images/demo_img.png';
 const String demo_sub = 'assets/images/demo_sub.png';
+const String sitting_left = 'assets/images/sitting_left.png';
+const String sitting_right = 'assets/images/sitting_right.png';

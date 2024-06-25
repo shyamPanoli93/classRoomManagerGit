@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hamon_student_pro/module/student/logic/student_cubit.dart';
 import 'package:hamon_student_pro/module/student/model/screen_arguments.dart';
 
 import '../../../routes/routes.dart';
@@ -12,11 +14,19 @@ class BuildStudentList extends StatelessWidget {
 
   final Students details;
 
+  void studentSelect(BuildContext context, Students detail) {
+    Navigator.pop(context, detail);
+  }
+
   @override
   Widget build(BuildContext context) {
+    bool isSelected = context.read<StudentCubit>().isSelected ?? false;
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, Routes.singleDetailsScreen,
-          arguments: ScreenArguments(email: details.email, name: details.name, age: details.age)),
+      onTap: () => (isSelected)
+          ? studentSelect(context,details)
+          : Navigator.pushNamed(context, Routes.singleDetailsScreen,
+              arguments: ScreenArguments(
+                  email: details.email, name: details.name, age: details.age)),
       child: Container(
         width: 358,
         height: 66,

@@ -9,7 +9,7 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RegistartionCubit(),
+      create: (context) => RegistrationCubit(),
       child:const RegistrationBody(),
     );
   }
